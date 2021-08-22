@@ -1,9 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { NextApiRequest, NextApiResponse } from "next";
 import { IChallengePaginateParams } from "../../../interfaces/IChallenge";
-import initializeDatabase from "../../../initializers/database";
+import initializeDatabase from "../../../database/init";
 import { getRepository } from "typeorm";
-import { Challenge } from "../../../entities/Challenge";
+import { Challenge } from "../../../database/entities/Challenge";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const connection = await initializeDatabase();

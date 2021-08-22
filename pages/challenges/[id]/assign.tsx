@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Form, Row, Col, Card, Button, Spinner, Alert } from "react-bootstrap";
-import { Student } from "../../../entities/Student";
+import { Student } from "../../../database/entities/Student";
 import { IStudent } from "../../../interfaces/IStudent";
 import { IChallenge } from "../../../interfaces/IChallenge";
 import ChallengeDetail from "../../../components/challenge-detail";

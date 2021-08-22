@@ -1,4 +1,4 @@
-import initializeDatabase from "../initializers/database";
+import initializeDatabase from "../init";
 import { seed as studentSeeds } from "./students.seed";
 const seed = async (): Promise<any> => {
   await studentSeeds();

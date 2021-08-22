@@ -5,14 +5,13 @@ import {
   getConnection,
   getConnectionOptions,
 } from "typeorm";
-import { Challenge } from "../entities/Challenge";
-import { Student } from "../entities/Student";
+import { Challenge } from "./entities/Challenge";
+import { Student } from "./entities/Student";
 let connection: Connection;
 export const initializeDatabase = async (
   optionOverrides: Record<string, any> = {}
 ): Promise<Connection> => {
   if (connection) {
-    console.log("reusing connection");
     return connection;
   }
   const connectionOptions = await getConnectionOptions();

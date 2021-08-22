@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getRepository } from "typeorm";
-import { Challenge } from "../../../../entities/Challenge";
-import initializeDatabase from "../../../../initializers/database";
+import { Challenge } from "../../../../database/entities/Challenge";
+import initializeDatabase from "../../../../database/init";
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "PUT") {
     _validateBody(req, res);

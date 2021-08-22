@@ -1,4 +1,4 @@
-import initializeDatabase from "../initializers/database";
+import initializeDatabase from "../init";
 import { StudentFactory } from "./students.factories";
 
 const run = async (): Promise<any> => {
