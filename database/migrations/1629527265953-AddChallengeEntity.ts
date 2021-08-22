@@ -3,7 +3,7 @@ import { MigrationInterface, QueryRunner } from "typeorm";
 export class AddChallengeEntity1629527265953 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(`
-        CREATE TABLE challenge (
+        CREATE TABLE challenges(
             id varchar(255) NOT NULL DEFAULT '',
             studentId varchar(255) NOT NULL DEFAULT '',
             name varchar(255) NOT NULL DEFAULT '',
