@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Table } from "react-bootstrap";
+import { Table, Card } from "react-bootstrap";
 import ChallengeRow from "../../components/challenge-row";
 import MyPagination from "../../components/pagination";
 import { IChallenge } from "../../interfaces/IChallenge";
@@ -35,40 +35,46 @@ export default function Challenges() {
 
   return (
     <div className="container">
-      <div className="row">
-        <h1 className="col">Challenges</h1>
-      </div>
-      <div className="row">
-        <Table striped responsive bordered hover>
-          <thead>
-            <tr>
-              <th className="text-center">No.</th>
-              <th>Name</th>
-              <th>Student</th>
-              <th className="text-center">Grading Status</th>
-              <th className="text-center">Grade</th>
-              <th>Reviewer</th>
-            </tr>
-          </thead>
-          <tbody>
-            {challengeList.map((challenge: IChallenge) => {
-              return <ChallengeRow key={challenge.id} challenge={challenge} />;
-            })}
-          </tbody>
-        </Table>
-      </div>
+      <Card style={{ marginTop: "32px" }}>
+        <Card.Header>
+          <h4>Challenges </h4>
+        </Card.Header>
+        <Card.Body>
+          <div className="row">
+            <Table striped responsive bordered hover>
+              <thead>
+                <tr>
+                  <th className="text-center">No.</th>
+                  <th>Name</th>
+                  <th>Student</th>
+                  <th className="text-center">Grading Status</th>
+                  <th className="text-center">Grade</th>
+                  <th>Reviewer</th>
+                </tr>
+              </thead>
+              <tbody>
+                {challengeList.map((challenge: IChallenge) => {
+                  return (
+                    <ChallengeRow key={challenge.id} challenge={challenge} />
+                  );
+                })}
+              </tbody>
+            </Table>
+          </div>
 
-      <div className="row">
-        <div className="col">
-          <MyPagination
-            totPages={totalPage}
-            currentPage={currentPage}
-            pageClicked={(ele) => {
-              afterPageClicked(ele);
-            }}
-          ></MyPagination>
-        </div>
-      </div>
+          <div className="row">
+            <div className="col">
+              <MyPagination
+                totPages={totalPage}
+                currentPage={currentPage}
+                pageClicked={(ele) => {
+                  afterPageClicked(ele);
+                }}
+              ></MyPagination>
+            </div>
+          </div>
+        </Card.Body>
+      </Card>
     </div>
   );
 }
